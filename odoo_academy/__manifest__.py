@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-{
+
 {
     'name': "Odoo Academy",
     'version': '1.0',
