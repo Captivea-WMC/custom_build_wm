@@ -12,7 +12,7 @@
     """,
     # data files always loaded at installation
     'data': [
-      #'security/academy_security.xml',
+      'security/academy_security.xml',
       'security/ir.model.access.csv',
       'views/academy_menuitems.xml',
       'views/course_views.xml',
