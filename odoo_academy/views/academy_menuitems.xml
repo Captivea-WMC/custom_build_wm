@@ -11,7 +11,7 @@
           Create the first course
         </p>
       </field>
-    </record>
+    </record>`
 
     <menuitem name="Odoo Academy"
               id="menu_academy"
