@@ -29,8 +29,8 @@ end_date = fields.date(string='End Date',
                          compute='_compute_end_date',
                          inverse='_inverse_end_date',
                          store=True)
-  @api.depends('start_date', 'duration')
-  def _compute_end_date(self):
+@api.depends('start_date', 'duration')
+def _compute_end_date(self):
     for record in self:
       if not (record.start_date and record.duration):
         record.end_date = record.start_date
