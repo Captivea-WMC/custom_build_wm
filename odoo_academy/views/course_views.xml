@@ -23,6 +23,9 @@
               <page string="Descrption">
                 <field name="Description"/>
               </page>
+              <page string="Sessions">
+                <field name="session_ids"/>
+              </page>
             </notebook>
           </sheet>
         </form>
