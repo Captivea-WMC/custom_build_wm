@@ -24,7 +24,7 @@ class Course(models.Model):
 
     total_price = fields.Float(string="Total Price", readonly=True)
 
-    sessions_id = fields.One2many(comodel_name='academy.session',
+    session_id = fields.One2many(comodel_name='academy.session',
                                   inverse_name='course_id',
                                   string='Sessions')
 
@@ -38,7 +38,7 @@ class Course(models.Model):
 
     @api.constrains('additional_fee')
     def _check_additional_fee(self):
-      for reocrd in self:
+      for record in self:
         if record.additoinal_fee < 10.00:
           raise ValidationError('Additional fees cannot be less than 10: %s'% record.additoinal_fee)
 
