@@ -5,30 +5,30 @@ from datetime import timedelta
 
 
 class Session(models.Model):
-  _name='academy.session'
-  _description='Session Info'
+    _name='academy.session'
+    _description='Session Info'
 
-course_id = fields.Many2one(comodel_name='academy.course',
+    course_id = fields.Many2one(comodel_name='academy.course',
                               string='Course',
                               ondelete='cascade',
                               required=True)
 
-name= fields.char(string='title', related='course_id.name')
+    name = fields.char(string='title', related='course_id.name')
 
-instructor_id = fields.Many2one(comodel_name='res.partner', string='Instructor')
+    instructor_id = fields.Many2one(comodel_name='res.partner', string='Instructor')
 
-student_ids = fields.Many2one(comodel_name='res.partner', string='Students')
+    student_ids = fields.Many2one(comodel_name='res.partner', string='Students')
 
-start_date = fields.Date(string='Start Date',
-                         default=fields.Date.today)
+    start_date = fields.Date(string='Start Date',
+                             default=fields.Date.today)
 
-duration = fields.Integer(string='Session Days',
-                            default=1)
+    duration = fields.Integer(string='Session Days',
+                                default=1)
 
-end_date = fields.date(string='End Date',
-                         compute='_compute_end_date',
-                         inverse='_inverse_end_date',
-                         store=True)
+    end_date = fields.date(string='End Date',
+                             compute='_compute_end_date',
+                             inverse='_inverse_end_date',
+                             store=True)
 @api.depends('start_date', 'duration')
 def _compute_end_date(self):
     for record in self:
