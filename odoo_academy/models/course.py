@@ -29,15 +29,15 @@ session_id = fields.One2many(comodel_name='academy.session',
                                inverse_name='course_id',
                                string='Sessions')
 
-  @api.onchange('base_price', 'additional_fee')
-  def _onchange_total_price(self):
+@api.onchange('base_price', 'additional_fee')
+def _onchange_total_price(self):
     if self.base_price < 0.0:
       raise UserError('Base PRice cannot be set as negative')
 
     self.total_price = self.base_price + self.additional_fee
 
-  @api.constrains('additional_fee')
-  def _check_additional_fee(self):
+@api.constrains('additional_fee')
+def _check_additional_fee(self):
     for record in self:
       if record.additoinal_fee < 10.00:
         raise ValidationError('Additional fees cannot be less than 10: %s' % record.additoinal_fee)
