@@ -16,7 +16,7 @@
       'security/ir.model.access.csv',
       'views/academy_menuitems.xml',
       'views/session_views.xml',
-     # 'views/course_views.xml',
+      'views/course_views.xml',
     ],
     # data files containing optionally loaded demonstration data
     'demo': [
