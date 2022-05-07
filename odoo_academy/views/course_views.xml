@@ -1,4 +1,4 @@
-<?xml version"1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <odoo>
   <data>
     <record model="ir.ui.view" id="course_view_form">
@@ -20,7 +20,7 @@
                 </group>
               </group>
             <notebook>
-              <page string="Descrption">
+              <page string="Description">
                 <field name="Description"/>
               </page>
               <page string="Sessions">

@@ -5,8 +5,8 @@ from odoo.exceptions import UserError, ValidationError
 
 
 class Course(models.Model):
-  _name = 'academy.course'
-  _description = 'Course Info'
+    _name = 'academy.course'
+    _description = 'Course Info'
 
 
 name = fields.Char(string='Title', required=True)
@@ -14,10 +14,10 @@ name = fields.Char(string='Title', required=True)
 description = fields.Text(string='Description')
 
 level = fields.Selection(string='Level',
-                           selection=[('beginner', 'Beginner'),
+                         selection=[('beginner', 'Beginner'),
                                       ('intermediate', 'Intermediate'),
                                       ('advanced', 'Advanced')],
-                           copy=False)
+                         copy=False)
 
 active = fields.Boolean(string='Active', default=True)
 
@@ -28,8 +28,8 @@ additional_fee = fields.Float(string="Additional Fee", default=10.00)
 total_price = fields.Float(string="Total Price", readonly=True)
 
 session_id = fields.One2many(comodel_name='academy.session',
-                               inverse_name='course_id',
-                               string='Sessions')
+                             inverse_name='course_id',
+                             string='Sessions')
 
 @api.onchange('base_price', 'additional_fee')
 def _onchange_total_price(self):
